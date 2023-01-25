@@ -2,7 +2,7 @@
 
 require_once 'TypedInput.php';
 require_once 'SelectInput.php';
-require_once 'formInputWrap.php';
+require_once 'FormInputWrap.php';
 
 class Form
 {
