@@ -22,8 +22,5 @@ document.addEventListener("DOMContentLoaded", function (){
         selectedHtmlEl.style.display = 'grid';
         selectedHtmlEl.querySelectorAll('input').forEach((input) => {input.required = true; });
     });
-
-    // document.getElementById('productForm').addEventListener('submit', (e) => {e.preventDefault});
-
 });
 

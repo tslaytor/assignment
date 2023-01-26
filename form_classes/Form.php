@@ -20,7 +20,7 @@ class Form
         foreach ($this->inputList as $input) {
             $generatedContent[] = $input->generate();
         }
-        
+
         return sprintf('<form id="%s" method="%s" action="">%s</form>', $id, $method, implode($generatedContent));
     }
 }

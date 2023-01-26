@@ -7,7 +7,6 @@ class TypedInput extends FormInput
     protected string $id;
     protected string $label;
     protected string $type;
-    // protected string $name;
     private string $required = '';
     private string $autocomplete = 'off';
 

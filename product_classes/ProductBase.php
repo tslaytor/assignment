@@ -6,7 +6,6 @@ require_once 'Delete.php';
 
 abstract class ProductBase
 {
-    
     private string $sku;
     private string $name;
     private int $price;
@@ -14,7 +13,6 @@ abstract class ProductBase
 
     public function __construct($sku='', $name='', $price=0, $id=null)
     {
-        
         $this->sku = $sku;
         $this->name = $name;
         $this->price = $price;

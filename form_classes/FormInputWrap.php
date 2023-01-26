@@ -12,7 +12,6 @@ class FormInputWrap
         if($instruction){
             $this->instruction = '<div class="instruction">' . $instruction . '</div>';
         }
-        
     }
     
     public function InputElements(array $elements): void

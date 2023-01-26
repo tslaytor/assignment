@@ -51,19 +51,16 @@ class ProductLister
         foreach (self::$list as $item): ?>
             <article class="product-list_item"> 
             <input type="checkbox" class="delete-checkbox" name="checkbox-delete" value="<?php echo $item->getId() ?>">
-               
                 <div class="product-list_text"> <?php echo $item->getSku() ?> </div>
                 <div class="product-list_text"> <?php echo $item->getName() ?> </div>
                 <div class="product-list_text"> <?php echo $item->getPriceAsCurrency() ?> </div>
                 <div class="product-list_text"> <?php echo $item->getProperty() ?> </div>
-
             </article> 
         <?php endforeach;
     }
 
     public static function massDelete(array $itemIndexList) 
     {
-
         foreach (self::$list as $obj) {
             if (in_array($obj->getId(), $itemIndexList)) {
                 $obj->delete();

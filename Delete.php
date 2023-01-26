@@ -10,8 +10,7 @@ class Delete
     {   
         self::$pdo = Connection::getInstance()->getPdo();
 
-        $statement = self::$pdo->prepare("
-        DELETE FROM products WHERE id = :id");
+        $statement = self::$pdo->prepare("DELETE FROM products WHERE id = :id");
         $statement->execute(['id' => $product->getId()]);
     }
 }
