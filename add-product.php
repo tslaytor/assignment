@@ -5,6 +5,26 @@ require_once 'product_classes/Dvd.php';
 require_once 'product_classes/Book.php';
 require_once 'product_classes/Furniture.php';
 
+$errorMessage = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $product = ucfirst(strtolower($_POST['productType']));
+    unset($_POST['productType'], $_POST['submit']);
+    $args = array_filter($_POST);
+
+    $newProduct = new $product(...$args);
+
+    $catch = $newProduct->save();
+    if($catch) {
+        $errorMessage = '<div class="alert">' . $catch . '</div>';
+    }
+    else {
+        header("Location: index.php");
+        die();      
+    }
+    
+} 
+
 // make a new form using classes
 $productForm = new Form();
 
@@ -24,7 +44,7 @@ $priceWrap->inputElements([new TypedInput(id:'price', label:'Price', type:'numbe
 $productForm->addInput($priceWrap);
 
 // create the product type switcher
-$productForm->addInput(new SelectInput(id:'productType', label:'Type Switcher', options:['Dvd', 'Book', 'Furniture']));
+$productForm->addInput(new SelectInput(id:'productType', label:'Type Switcher', options:['DVD', 'Book', 'Furniture']));
 
 // create a new form group for the size property
 $sizeWrap = new FormInputWrap(cssClass:'formGroup sizeWrap', instruction: 'Please, provide size');
@@ -57,7 +77,7 @@ $productForm->addInput($dimensionWrap);
 <header id="header">
     <h1>Product Add</h1>
     <div class="button-wrap">
-        <button form="productForm" type="submit">SAVE</button>
+        <button form="product_form" type="submit" name="Save">SAVE</button>
         <a href="index.php"><button>CANCEL</button></a>
         
     </div>
@@ -65,26 +85,10 @@ $productForm->addInput($dimensionWrap);
 </header>
 <div id="formContainer">
     <?php  
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $product = $_POST['productType'];
-        unset($_POST['productType'], $_POST['submit']);
-        $args = array_filter($_POST);
-    
-        $newProduct = new $product(...$args);
-    
-        $catch = $newProduct->save();
-        if($catch) {
-            echo '<div class="alert">' . $catch . '</div>';
-            // print $catch;
-        }
-        else {
-            header("Location: index.php");
-            die();      
-        }
-        
-    } 
+    // display error message (if there is one)
+    echo $errorMessage;
     // display the form
-    echo $productForm->display(id:'productForm', method:'post');
+    echo $productForm->display(id:'product_form', method:'post');
     ?>
 </div>
 <body>
