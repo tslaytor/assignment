@@ -34,29 +34,14 @@ abstract class ProductBase
         return $this->sku;
     }
 
-    public function setSku(string $sku): void
-    {
-        $this->sku = $sku;
-    }
-
     public function getName(): string
     {
         return $this->name;
-    }
-
-    public function setName(string $name): void
-    {
-        $this->name = $name;
     }
    
     public function getPrice(): int
     {
         return $this->price;
-    }
-
-    public function SetPrice(int $price): int
-    {
-        return $this->price = $price;
     }
 
     public function getId(): ?int
