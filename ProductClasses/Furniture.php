@@ -1,6 +1,10 @@
-<?php  
+<?php
+
+// namespace ProductClasses;
 
 require_once 'ProductBase.php';
+
+// use ProductClasses\ProductBase;
 
 class Furniture extends ProductBase
 {
@@ -8,7 +12,7 @@ class Furniture extends ProductBase
     private int $width;
     private int $length;
 
-    public function __construct($sku, $name, $price, $height=0, $width=0, $length=0, $id=null)
+    public function __construct($sku, $name, $price, $height = 0, $width = 0, $length = 0, $id = null)
     {
         parent::__construct($sku, $name, $price, $id);
 
@@ -50,9 +54,8 @@ class Furniture extends ProductBase
     public function getProperty(): string
     {
         return 'Dimension: ' .
-        $this->height . 
-        'x' . $this->width . 
+        $this->height .
+        'x' . $this->width .
         'x' . $this->length;
     }
-
 }

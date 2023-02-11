@@ -1,12 +1,14 @@
-<?php  
+<?php
+
+// namespace ProductClasses;
 
 require_once 'ProductBase.php';
 
 class Dvd extends ProductBase
 {
     private int $size;
- 
-    public function __construct($sku, $name, $price, $size, $id=null)
+
+    public function __construct($sku, $name, $price, $size, $id = null)
     {
         parent::__construct($sku, $name, $price, $id);
         $this->size = $size;

@@ -1,4 +1,6 @@
-<?php  
+<?php
+
+// namespace FormClasses;
 
 require_once 'FormInput.php';
 
@@ -14,18 +16,18 @@ class TypedInput extends FormInput
     {
         parent::__construct($id, $label);
         $this->type = $type;
-        if ($required){
+        if ($required) {
             $this->required = 'required';
         }
         if ($autocomplete){
             $this->autocomplete = 'on';
         }
     }
-    
+
     public function generate(): string
     {
         return sprintf('<label for="%s">%s</label>
-                        <input type="%s" id="%s" name="%s" %s autocomplete="%s">', 
+                        <input type="%s" id="%s" name="%s" %s autocomplete="%s">',
                         $this->id, $this->label, $this->type, $this->id, $this->id, $this->required, $this->autocomplete);
     }
 }

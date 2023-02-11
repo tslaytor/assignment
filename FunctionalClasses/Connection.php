@@ -1,4 +1,8 @@
-<?php  
+<?php
+
+// namespace FunctionalClasses;
+
+// use \PDO;
 
 class Connection
 {
@@ -17,7 +21,7 @@ class Connection
     private function __construct()
     {
         $dsn = "mysql:host={$this->host};dbname={$this->dbname}";
-        
+
         try {
             $this->pdo = new PDO($dsn, 'root', 'root', self::OPTIONS);
         } catch (PDOException $exception) {
@@ -30,7 +34,6 @@ class Connection
         if (self::$instance === null) {
             self::$instance = new self();
         }
-
         return self::$instance;
     }
 

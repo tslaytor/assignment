@@ -3,10 +3,18 @@
 // This class's static "getList()" function select all product from the database 
 // and returns a sorted array of Product objects
 
+// namespace FunctionalClasses;
+
 require_once 'Connection.php';
-require_once 'product_classes/Dvd.php';
-require_once 'product_classes/Book.php';
-require_once 'product_classes/Furniture.php';
+require_once 'ProductClasses/Dvd.php';
+require_once 'ProductClasses/Book.php';
+require_once 'ProductClasses/Furniture.php';
+
+// use FunctionalClasses\Connection;
+// use ProductClasses\Dvd;
+// use ProductClasses\Book;
+// use ProductClasses\Furniture;
+// use \PDO;
 
 class ProductLister
 {
@@ -47,6 +55,8 @@ class ProductLister
         usort(self::$list, function($a, $b) {
             return $a->getId() - $b->getId();
         });
+
+        echo count(self::$list);
 
         foreach (self::$list as $item): ?>
             <article class="product-list_item"> 

@@ -1,8 +1,17 @@
-<?php 
-require_once 'form_classes/Form.php';
-require_once 'product_classes/Dvd.php';
-require_once 'product_classes/Book.php';
-require_once 'product_classes/Furniture.php';
+<?php
+
+require_once 'FormClasses/Form.php';
+require_once 'ProductClasses/Dvd.php';
+require_once 'ProductClasses/Book.php';
+require_once 'ProductClasses/Furniture.php';
+
+// use FormClasses\Form;
+// use FormClasses\FormInputWrap;
+// use FormClasses\TypedInput;
+// use FormClasses\SelectInput;
+// use ProductClasses\Dvd as Dvd;
+// use ProductClasses\Book;
+// use ProductClasses\Furniture;
 
 $errorMessage = '';
 
@@ -10,17 +19,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $product = ucfirst(strtolower($_POST['productType']));
     unset($_POST['productType'], $_POST['submit']);
     $args = array_filter($_POST);
-    // create and savenew product object
+    // create and save new product object
     $newProduct = new $product(...$args);
     $catch = $newProduct->save();
-    if($catch) {
+    if ($catch) {
         $errorMessage = '<div class="alert">' . $catch . '</div>';
-    }
-    else {
+    } else {
         header("Location: index.php");
-        die();      
+        die();
     }
-} 
+}
 
 // make a new form object
 $productForm = new Form();
@@ -56,8 +64,8 @@ $productForm->addInput($weightWrap);
 // create a new form group object for the dimension properties (height, width and length)
 $dimensionWrap = new FormInputWrap(cssClass:'dimensionWrap', instruction: 'Please, provide dimensions');
 $dimensionWrap->inputElements([
-    new TypedInput(id: 'height', label:'Height', type:'number'), 
-    new TypedInput(id:'width', label:'Width', type:'number'), 
+    new TypedInput(id: 'height', label:'Height', type:'number'),
+    new TypedInput(id:'width', label:'Width', type:'number'),
     new TypedInput(id:'length', label:'Length', type:'number')]);
 $productForm->addInput($dimensionWrap);
 
@@ -76,11 +84,10 @@ $productForm->addInput($dimensionWrap);
             <div class="button-wrap">
                 <button form="product_form" type="submit" name="Save">SAVE</button>
                 <a href="index.php"><button>CANCEL</button></a>
-                
             </div>
         </header>
         <div id="formContainer">
-            <?php  
+            <?php
             // display error message (if there is one)
             echo $errorMessage;
             // display the form
@@ -92,4 +99,3 @@ $productForm->addInput($dimensionWrap);
         </footer>
     </body>
 </html>
- 

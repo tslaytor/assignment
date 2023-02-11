@@ -1,4 +1,6 @@
-<?php  
+<?php
+
+// namespace FormClasses;
 
 class FormInputWrap
 {
@@ -9,14 +11,14 @@ class FormInputWrap
     public function __construct(string $cssClass, string $instruction = '')
     {
         $this->cssClass = $cssClass;
-        if($instruction){
+        if ($instruction) {
             $this->instruction = '<div class="instruction">' . $instruction . '</div>';
         }
     }
-    
-    public function InputElements(array $elements): void
-    { 
-        foreach($elements as $element){
+
+    public function inputElements(array $elements): void
+    {
+        foreach ($elements as $element) {
             $this->content[] = $element->generate();
         }
     }

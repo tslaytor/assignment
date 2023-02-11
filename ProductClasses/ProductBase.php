@@ -1,8 +1,15 @@
-<?php  
+<?php
 
-require_once 'Connection.php';
-require_once 'Save.php';
-require_once 'Delete.php';
+// namespace ProductClasses;
+
+require_once 'FunctionalClasses/Connection.php';
+require_once 'FunctionalClasses/Save.php';
+require_once 'FunctionalClasses/Delete.php';
+
+// use FunctionalClasses\Connection;
+// use FunctionalClasses\Save;
+// use FunctionalClasses\Delete;
+// use \PDO;
 
 abstract class ProductBase
 {
@@ -11,7 +18,7 @@ abstract class ProductBase
     private int $price;
     private ?int $id;
 
-    public function __construct($sku='', $name='', $price=0, $id=null)
+    public function __construct($sku = '', $name = '', $price = 0, $id = null)
     {
         $this->sku = $sku;
         $this->name = $name;
@@ -26,7 +33,7 @@ abstract class ProductBase
         $pdo = Connection::getInstance()->getPdo();
         $statement = $pdo->prepare('SELECT id FROM type WHERE type = :type');
         $statement->execute(['type' => static::class]);
-        return $statement->fetchColumn();;
+        return $statement->fetchColumn();
     }
 
     public function getSku(): string
@@ -38,7 +45,7 @@ abstract class ProductBase
     {
         return $this->name;
     }
-   
+
     public function getPrice(): int
     {
         return $this->price;
@@ -50,7 +57,7 @@ abstract class ProductBase
     }
 
     public function getPriceAsCurrency(string $symbol = "$"): string
-    {   
+    {
         return $symbol . number_format((float)$this->getPrice() / 100, 2);
     }
 

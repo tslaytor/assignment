@@ -1,5 +1,7 @@
-<?php   
-    require_once 'ProductLister.php';
+<?php
+    require_once 'FunctionalClasses/ProductLister.php';
+
+    // use FunctionalClasses\ProductLister;
 ?>
 <html>
     <head>
@@ -18,13 +20,13 @@
             </div>
         </header>
         <div id="product-list_container">
-            <?php   
+            <?php
             // The getList function lists all the products in the database
             ProductLister::getList();
             ?>
         </div>
-   
-        <?php   
+
+        <?php
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST = json_decode(file_get_contents('php://input'), true);
             // delete all selected products from the database and refresh this page
@@ -36,11 +38,3 @@
         </footer>
     </body>
 </html>
-
-
-
-
-
-
-
-

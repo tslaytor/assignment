@@ -1,10 +1,12 @@
-<?php  
+<?php
+
+// namespace FormClasses;
 
 abstract class FormInput
 {
     protected string $id;
     protected string $label;
-    
+
     protected function __construct($id, $label)
     {
         $this->id = $id;

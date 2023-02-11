@@ -1,4 +1,6 @@
-<?php  
+<?php
+
+// namespace FormClasses;
 
 class SelectInput extends FormInput
 {
@@ -32,4 +34,3 @@ class SelectInput extends FormInput
         </div>', $this->id, $this->label, $this->id, $this->id, $this->optionStringGenerator());
     }
 }
-
