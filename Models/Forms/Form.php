@@ -19,7 +19,7 @@ class Form
         $this->inputList[] = $input;
     }
 
-    public function display(string $id, string $method): string
+    public function generate(string $id, string $method): string
     {
         $generatedContent = [];
 

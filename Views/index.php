@@ -22,7 +22,16 @@
         <div id="product-list_container">
             <?php
             // The getList function lists all the products in the database
-            ProductLister::getList();
+            $products = ProductLister::getList();
+            foreach ($products as $item): ?>
+                <article class="product-list_item"> 
+                <input type="checkbox" class="delete-checkbox" name="checkbox-delete" value="<?php echo $item->getId() ?>">
+                    <div class="product-list_text"> <?php echo $item->getSku() ?> </div>
+                    <div class="product-list_text"> <?php echo $item->getName() ?> </div>
+                    <div class="product-list_text"> <?php echo $item->getPriceAsCurrency() ?> </div>
+                    <div class="product-list_text"> <?php echo $item->getProperty() ?> </div>
+                </article> 
+            <?php endforeach;
             ?>
         </div>
 

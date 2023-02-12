@@ -20,7 +20,7 @@ class ProductLister
 {
     private static array $list;
     
-    public static function getList(): void
+    public static function getList(): array
     {
         $pdo = Connection::getInstance()->getPdo();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -56,17 +56,7 @@ class ProductLister
             return $a->getId() - $b->getId();
         });
 
-        echo count(self::$list);
-
-        foreach (self::$list as $item): ?>
-            <article class="product-list_item"> 
-            <input type="checkbox" class="delete-checkbox" name="checkbox-delete" value="<?php echo $item->getId() ?>">
-                <div class="product-list_text"> <?php echo $item->getSku() ?> </div>
-                <div class="product-list_text"> <?php echo $item->getName() ?> </div>
-                <div class="product-list_text"> <?php echo $item->getPriceAsCurrency() ?> </div>
-                <div class="product-list_text"> <?php echo $item->getProperty() ?> </div>
-            </article> 
-        <?php endforeach;
+        return self::$list;
     }
 
     public static function massDelete(array $itemIndexList) 
