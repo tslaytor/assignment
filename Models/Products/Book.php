@@ -4,6 +4,8 @@
 
 require_once 'ProductBase.php';
 
+// use \ProductClasses\ProductBase;
+
 class Book extends ProductBase
 {
     private int $weight;

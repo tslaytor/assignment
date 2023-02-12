@@ -1,15 +1,15 @@
 <?php
-    require_once 'FunctionalClasses/ProductLister.php';
+    require_once '../Controllers/ProductLister.php';
 
-    // use FunctionalClasses\ProductLister;
+    // use \FunctionalClasses\ProductLister;
 ?>
 <html>
     <head>
-        <script src="static/index.js"></script>
+        <script src="../static/index.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="static/styles.css">
+        <link rel="stylesheet" href="../static/styles.css">
     </head>
     <body>
         <header id="header">

@@ -7,8 +7,8 @@
 
 require_once 'Connection.php';
 
-// use FunctionalClasses\Connection;
-// use ProductClasses\ProductBase;
+// use \FunctionalClasses\Connection;
+// use \ProductClasses\ProductBase;
 // use \PDO;
 
 class Save

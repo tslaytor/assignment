@@ -4,6 +4,8 @@
 
 require_once 'FormInput.php';
 
+// use \FormClasses\FormInput;
+
 class TypedInput extends FormInput
 {
     protected string $id;

@@ -2,7 +2,7 @@
 
 // namespace FunctionalClasses;
 
-// use \PDO;
+// use \PDO as PDO;
 
 class Connection
 {
@@ -25,6 +25,7 @@ class Connection
         try {
             $this->pdo = new PDO($dsn, 'root', 'root', self::OPTIONS);
         } catch (PDOException $exception) {
+            echo ($exception->getMessage());
             throw new PDOException($exception->getMessage(), (int) $exception->getCode());
         }
     }

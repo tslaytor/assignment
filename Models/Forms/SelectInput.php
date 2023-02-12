@@ -2,6 +2,10 @@
 
 // namespace FormClasses;
 
+require_once 'FormInput.php';
+
+// use \FormClasses\FormInput;
+
 class SelectInput extends FormInput
 {
     protected string $id;

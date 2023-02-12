@@ -6,9 +6,9 @@ require_once 'TypedInput.php';
 require_once 'SelectInput.php';
 require_once 'FormInputWrap.php';
 
-// use FormClasses\TypedInput;
-// use FormClasses\SelectInput;
-// use FormClasses\FormInputWrap;
+// use \FormClasses\TypedInput;
+// use \FormClasses\SelectInput;
+// use \FormClasses\FormInputWrap;
 
 class Form
 {

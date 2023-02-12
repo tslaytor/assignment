@@ -2,13 +2,13 @@
 
 // namespace ProductClasses;
 
-require_once 'FunctionalClasses/Connection.php';
-require_once 'FunctionalClasses/Save.php';
-require_once 'FunctionalClasses/Delete.php';
+require_once '../Controllers/Connection.php';
+require_once '../Controllers/Save.php';
+require_once '../Controllers/Delete.php';
 
-// use FunctionalClasses\Connection;
-// use FunctionalClasses\Save;
-// use FunctionalClasses\Delete;
+// use \FunctionalClasses\Connection;
+// use \FunctionalClasses\Save;
+// use \FunctionalClasses\Delete;
 // use \PDO;
 
 abstract class ProductBase

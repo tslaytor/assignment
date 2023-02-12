@@ -6,14 +6,14 @@
 // namespace FunctionalClasses;
 
 require_once 'Connection.php';
-require_once 'ProductClasses/Dvd.php';
-require_once 'ProductClasses/Book.php';
-require_once 'ProductClasses/Furniture.php';
+require_once '../Models/Products/Dvd.php';
+require_once '../Models/Products/Book.php';
+require_once '../Models/Products/Furniture.php';
 
-// use FunctionalClasses\Connection;
-// use ProductClasses\Dvd;
-// use ProductClasses\Book;
-// use ProductClasses\Furniture;
+// use \FunctionalClasses\Connection;
+// use \ProductClasses\Dvd;
+// use \ProductClasses\Book;
+// use \ProductClasses\Furniture;
 // use \PDO;
 
 class ProductLister

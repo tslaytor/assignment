@@ -1,17 +1,17 @@
 <?php
 
-require_once 'FormClasses/Form.php';
-require_once 'ProductClasses/Dvd.php';
-require_once 'ProductClasses/Book.php';
-require_once 'ProductClasses/Furniture.php';
+require_once '../Models/Forms/Form.php';
+require_once '../Models/Products/Dvd.php';
+require_once '../Models/Products/Book.php';
+require_once '../Models/Products/Furniture.php';
 
-// use FormClasses\Form;
-// use FormClasses\FormInputWrap;
-// use FormClasses\TypedInput;
-// use FormClasses\SelectInput;
-// use ProductClasses\Dvd as Dvd;
-// use ProductClasses\Book;
-// use ProductClasses\Furniture;
+// use \FormClasses\Form;
+// use \FormClasses\FormInputWrap;
+// use \FormClasses\TypedInput;
+// use \FormClasses\SelectInput;
+// use \ProductClasses\Dvd;
+// use \ProductClasses\Book;
+// use \ProductClasses\Furniture;
 
 $errorMessage = '';
 
@@ -72,11 +72,11 @@ $productForm->addInput($dimensionWrap);
 ?>
 <html>
     <head>
-        <script src="static/create.js"></script>
+        <script src="../static/create.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="static/styles.css">
+        <link rel="stylesheet" href="../static/styles.css">
     </head>
     <body>
         <header id="header">
