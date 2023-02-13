@@ -1,7 +1,5 @@
 <?php
 
-// namespace FormClasses;
-
 abstract class FormInput
 {
     protected string $id;

@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", function (){
         var wraps = ['sizeWrap', 'weightWrap', 'dimensionWrap'];
         // on change, reset all product specific form elements
         wraps.forEach((wrap) => {
-            var htmlEl = document.getElementsByClassName(wrap)[0];
-            htmlEl.style.display = 'none';
-            htmlEl.querySelectorAll('input').forEach((input) => {input.required = false; input.value =''});
+            var htmlElement = document.getElementsByClassName(wrap)[0];
+            htmlElement.style.display = 'none';
+            htmlElement.querySelectorAll('input').forEach((input) => {input.required = false; input.value =''});
         });
         // and set the selected form element to be visible and required
-        var selectedHtmlEl = document.getElementsByClassName(wraps[dropDown.selectedIndex])[0];
-        selectedHtmlEl.style.display = 'grid';
-        selectedHtmlEl.querySelectorAll('input').forEach((input) => {input.required = true; });
+        var selectedHtmlElement = document.getElementsByClassName(wraps[dropDown.selectedIndex])[0];
+        selectedHtmlElement.style.display = 'grid';
+        selectedHtmlElement.querySelectorAll('input').forEach((input) => {input.required = true; });
     });
 });
 

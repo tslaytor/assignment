@@ -1,7 +1,7 @@
 <?php
+
     require_once '../Controllers/ProductLister.php';
 
-    // use \FunctionalClasses\ProductLister;
 ?>
 <html>
     <head>
@@ -24,17 +24,15 @@
             // The getList function lists all the products in the database
             $products = ProductLister::getList();
             foreach ($products as $item): ?>
-                <article class="product-list_item"> 
+                <article class="product-list_item">
                 <input type="checkbox" class="delete-checkbox" name="checkbox-delete" value="<?php echo $item->getId() ?>">
                     <div class="product-list_text"> <?php echo $item->getSku() ?> </div>
                     <div class="product-list_text"> <?php echo $item->getName() ?> </div>
-                    <div class="product-list_text"> <?php echo $item->getPriceAsCurrency() ?> </div>
+                    <div class="product-list_text"> <?php echo $item->getPriceAsCurrency() ?></div>
                     <div class="product-list_text"> <?php echo $item->getProperty() ?> </div>
-                </article> 
-            <?php endforeach;
-            ?>
+                </article>
+            <?php endforeach; ?>
         </div>
-
         <?php
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST = json_decode(file_get_contents('php://input'), true);

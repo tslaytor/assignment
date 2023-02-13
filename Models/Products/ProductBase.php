@@ -1,15 +1,8 @@
 <?php
 
-// namespace ProductClasses;
-
 require_once '../Controllers/Connection.php';
 require_once '../Controllers/Save.php';
 require_once '../Controllers/Delete.php';
-
-// use \FunctionalClasses\Connection;
-// use \FunctionalClasses\Save;
-// use \FunctionalClasses\Delete;
-// use \PDO;
 
 abstract class ProductBase
 {

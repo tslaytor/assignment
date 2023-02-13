@@ -1,10 +1,6 @@
 <?php
 
-// namespace FunctionalClasses;
-
 require_once 'Connection.php';
-
-// use \FunctionalClasses\Connection;
 
 class Delete
 {

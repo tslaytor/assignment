@@ -1,10 +1,6 @@
 <?php
 
-// namespace FormClasses;
-
 require_once 'FormInput.php';
-
-// use \FormClasses\FormInput;
 
 class TypedInput extends FormInput
 {

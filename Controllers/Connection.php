@@ -1,9 +1,5 @@
 <?php
 
-// namespace FunctionalClasses;
-
-// use \PDO as PDO;
-
 class Connection
 {
     private static $instance = null;

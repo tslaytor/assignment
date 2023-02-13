@@ -1,20 +1,9 @@
 <?php  
 
-// This class's static "getList()" function select all product from the database 
-// and returns a sorted array of Product objects
-
-// namespace FunctionalClasses;
-
 require_once 'Connection.php';
 require_once '../Models/Products/Dvd.php';
 require_once '../Models/Products/Book.php';
 require_once '../Models/Products/Furniture.php';
-
-// use \FunctionalClasses\Connection;
-// use \ProductClasses\Dvd;
-// use \ProductClasses\Book;
-// use \ProductClasses\Furniture;
-// use \PDO;
 
 class ProductLister
 {

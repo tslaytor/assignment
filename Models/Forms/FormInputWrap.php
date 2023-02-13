@@ -1,7 +1,5 @@
 <?php
 
-// namespace FormClasses;
-
 class FormInputWrap
 {
     private string $cssClass;
@@ -25,9 +23,6 @@ class FormInputWrap
 
     public function generate(): string
     {
-        return sprintf('<div class="%s">
-                            %s
-                            %s
-                        </div>', $this->cssClass, implode($this->content), $this->instruction);
+        return sprintf('<div class="%s"> %s %s </div>', $this->cssClass, implode($this->content), $this->instruction);
     }
 }
