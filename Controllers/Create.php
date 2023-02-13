@@ -7,7 +7,8 @@ require_once '../Models/Products/Furniture.php';
 
 class Create
 {
-    public static function createObject($postData) {
+    public static function createObject($postData): void
+    {
         $product = ucfirst(strtolower($postData['productType']));
         unset($postData['productType'], $postData['submit']);
         $args = array_filter($postData);
@@ -20,5 +21,5 @@ class Create
             header("Location: index.php");
             die();
         }
-    }  
+    }
 }

@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 require_once 'Connection.php';
 require_once '../Models/Products/Dvd.php';
@@ -8,7 +8,7 @@ require_once '../Models/Products/Furniture.php';
 class ProductLister
 {
     private static array $list;
-    
+
     public static function getList(): array
     {
         $pdo = Connection::getInstance()->getPdo();
@@ -16,41 +16,43 @@ class ProductLister
 
         // get all dvd products
         $statement = $pdo->prepare('SELECT sku, name, price, size, id FROM products WHERE type_id = :type_id');
-        $statement->execute(['type_id'=> Dvd::getTypeId()]);
+        $statement->execute(['type_id' => Dvd::getTypeId()]);
         $dvd = $statement->fetchAll(
-            PDO::FETCH_FUNC, 
-            function ($sku, $name, $price, $size, $id) { 
-                return new Dvd($sku, $name, $price, $size, $id); 
-            });
+            PDO::FETCH_FUNC,
+            function ($sku, $name, $price, $size, $id) {
+                return new Dvd($sku, $name, $price, $size, $id);
+            }
+        );
 
         // get all book products
         $statement = $pdo->prepare('SELECT sku, name, price, weight, id FROM products WHERE type_id = :type_id');
-        $statement->execute(['type_id'=> Book::getTypeId()]);
+        $statement->execute(['type_id' => Book::getTypeId()]);
         $book = $statement->fetchAll(
-            PDO::FETCH_FUNC, 
-            function ($sku, $name, $price, $weight, $id) { 
-                return new Book($sku, $name, $price, $weight, $id); 
-            });
+            PDO::FETCH_FUNC,
+            function ($sku, $name, $price, $weight, $id) {
+                return new Book($sku, $name, $price, $weight, $id);
+            }
+        );
 
         // get all furniture products
         $statement = $pdo->prepare('SELECT sku, name, price, height, width, length, id FROM products WHERE type_id = :type_id');
-        $statement->execute(['type_id'=> Furniture::getTypeId()]);
+        $statement->execute(['type_id' => Furniture::getTypeId()]);
         $furniture = $statement->fetchAll(
-            PDO::FETCH_FUNC, 
-            function ($sku, $name, $price, $height, $width, $length, $id) { 
-                return new Furniture($sku, $name, $price, $height, $width, $length, $id); 
-            });
-            
+            PDO::FETCH_FUNC,
+            function ($sku, $name, $price, $height, $width, $length, $id) {
+                return new Furniture($sku, $name, $price, $height, $width, $length, $id);
+            }
+        );
+
         // merge and sort by primary key
         self::$list = array_merge(array_merge($dvd, $book), $furniture);
-        usort(self::$list, function($a, $b) {
-            return $a->getId() - $b->getId();
+        usort(self::$list, function ($a, $b) {
+                return $a->getId() - $b->getId();
         });
-
         return self::$list;
     }
 
-    public static function massDelete(array $itemIndexList) 
+    public static function massDelete(array $itemIndexList): void
     {
         foreach (self::$list as $obj) {
             if (in_array($obj->getId(), $itemIndexList)) {

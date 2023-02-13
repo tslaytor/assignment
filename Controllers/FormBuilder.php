@@ -7,10 +7,8 @@ require_once '../Models/Forms/FormInputWrap.php';
 
 class FormBuilder
 {
-
     public static function display(string $id, string $method): string
     {
-
         // make a new form object
         $productForm = new Form();
 
@@ -51,6 +49,5 @@ class FormBuilder
         $productForm->addInput($dimensionWrap);
 
         return $productForm->generate($id, $method);
-    
     }
 }
