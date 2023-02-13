@@ -1,7 +1,7 @@
 <?php
 
-require_once '../Controllers/Create.php';
-require_once '../Controllers/FormBuilder.php';
+require_once 'Controllers/Create.php';
+require_once 'Controllers/FormBuilder.php';
 
 $errorMessage = '';
 

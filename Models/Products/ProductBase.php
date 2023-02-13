@@ -1,8 +1,8 @@
 <?php
 
-require_once '../Controllers/Connection.php';
-require_once '../Controllers/Save.php';
-require_once '../Controllers/Delete.php';
+require_once 'Controllers/Connection.php';
+require_once 'Controllers/Save.php';
+require_once 'Controllers/Delete.php';
 
 abstract class ProductBase
 {

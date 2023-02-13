@@ -1,6 +1,6 @@
 <?php
 
-    require_once '../Controllers/ProductLister.php';
+    require_once 'Controllers/ProductLister.php';
 
 ?>
 <html>

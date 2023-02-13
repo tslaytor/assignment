@@ -1,9 +1,9 @@
 <?php
 
-require_once '../Models/Forms/Form.php';
-require_once '../Models/Forms/TypedInput.php';
-require_once '../Models/Forms/SelectInput.php';
-require_once '../Models/Forms/FormInputWrap.php';
+require_once 'Models/Forms/Form.php';
+require_once 'Models/Forms/TypedInput.php';
+require_once 'Models/Forms/SelectInput.php';
+require_once 'Models/Forms/FormInputWrap.php';
 
 class FormBuilder
 {

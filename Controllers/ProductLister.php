@@ -1,9 +1,9 @@
 <?php
 
 require_once 'Connection.php';
-require_once '../Models/Products/Dvd.php';
-require_once '../Models/Products/Book.php';
-require_once '../Models/Products/Furniture.php';
+require_once 'Models/Products/Dvd.php';
+require_once 'Models/Products/Book.php';
+require_once 'Models/Products/Furniture.php';
 
 class ProductLister
 {
