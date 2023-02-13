@@ -13,8 +13,8 @@ class ProductLister
     {
         $pdo = Connection::getInstance()->getPdo();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        // // get all dvd products
 
+        // get all dvd products
         $statement = $pdo->prepare('SELECT sku, name, price, size, id FROM products WHERE type_id = :type_id');
         $statement->execute(['type_id'=> Dvd::getTypeId()]);
         $dvd = $statement->fetchAll(
@@ -31,6 +31,7 @@ class ProductLister
             function ($sku, $name, $price, $weight, $id) { 
                 return new Book($sku, $name, $price, $weight, $id); 
             });
+
         // get all furniture products
         $statement = $pdo->prepare('SELECT sku, name, price, height, width, length, id FROM products WHERE type_id = :type_id');
         $statement->execute(['type_id'=> Furniture::getTypeId()]);
@@ -39,6 +40,7 @@ class ProductLister
             function ($sku, $name, $price, $height, $width, $length, $id) { 
                 return new Furniture($sku, $name, $price, $height, $width, $length, $id); 
             });
+            
         // merge and sort by primary key
         self::$list = array_merge(array_merge($dvd, $book), $furniture);
         usort(self::$list, function($a, $b) {
