@@ -1,12 +1,14 @@
 # assignment
 This is a task assignment I was set for a junior web developer role, and was offered the job for :D
 
+You can see the finished project live here: https://tslaytor-assignment.000webhostapp.com/
+
 Requirements:
 
 Create a e-commerce site that sells 3 types of products: books, DVDs, and furniture.
 The site should have 2 pages, a product listing page and a create product page.
 Write the server side in PHP, using OOP principles to handle differences in the logic and behavoir
-- Use meaningful classes that extend each other, including an abstract class for the main product logic.
+- Use classes that extend each other, including an abstract class for the main product logic.
 - Avoid using conditional statements for handling differences in product types
 - Do not use different endpoints for different products types. There should be 1 general endpoint for product saving
 Procedural PHP code is only allowed to initialise classes. All other logic must be placed within class methods.
@@ -15,7 +17,6 @@ MySQL logic should be handled by objects with properties instead of direct colum
 
 ## Product List Page 
 Products should be sorted by primary key in database, not split by product types
-
 
 ### All products have the following:
 
@@ -34,7 +35,7 @@ Products should be sorted by primary key in database, not split by product types
 
 ## Add Product Page
 
-### The page should display a form with id: #product_form, with the following fields:
+### The page should display a form with the following fields:
 
 - SKU
 - Name
@@ -46,9 +47,7 @@ Products should be sorted by primary key in database, not split by product types
     - Furniture
     
 - Product type-specific attribute
-    - Size input field (in MB) for DVD should have an ID: #size
-    - Weight input field (in Kg) for Book should have an ID: #weight
-    - Each from Dimensions input fields (HxWxL) for Furniture should have an appropriate ID:
-        - Height - #height
-        - Width - #width
-        - Length - #length
+    - Size input field for DVD 
+    - Weight input field for Book
+    - Each from Dimensions input fields for Furniture
+
