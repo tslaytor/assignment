@@ -51,3 +51,8 @@ Products should be sorted by primary key in database, not split by product types
     - Weight input field for Book
     - Each from Dimensions input fields for Furniture
 
+<img width="1449" alt="image" src="https://user-images.githubusercontent.com/22756687/224577783-141f749f-18f0-457a-8c00-8ee4512b6133.png">
+
+<img width="1462" alt="image" src="https://user-images.githubusercontent.com/22756687/224577798-8a5b0a0c-9547-4a58-a33a-0d5cfb425732.png">
+
+  
